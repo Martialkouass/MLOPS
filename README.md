@@ -1,2 +1,3 @@
 # MLOPS
-This is the first lab on MLOPS
+THIS IS THE FIRST LAB ON MLOPS
+dev-mori
