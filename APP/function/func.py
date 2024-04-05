@@ -9,6 +9,8 @@ def validate_username(username):
         return False
     if ' ' in username:
         return False
+    if not username.isalnum():  # Check if username contains only alphanumeric characters
+        return False
     return True
 
 def validate_password(password):
@@ -18,7 +20,7 @@ def validate_password(password):
         return False
     if not any(char.isalpha() for char in password):
         return False
-    if not any(char in '!@#$%^&*()-_=+[\]{}|;:,.<>?`~' for char in password):
+    if not any(char in r'!@#$%^&*()-_=+[\]{}|;:,.<>?`~' for char in password):
         return False
     return True
 
@@ -55,15 +57,3 @@ if __name__ == "__main__":
     
     
     
-def main ():
-    n = int(input("Enter a number: "))
-    if is_prime(n):
-        print(n, "is a prime number.")
-    else:
-        print(n, "is not a prime number.")
-    
-    # Sum of prime numbers up to n    
-    print("Sum of prime numbers up to", n, "is:", sum_of_primes(range(n)))
-        
-if __name__ == "__main__":
-    main()
